@@ -45,4 +45,8 @@ public class StudentController {
 	public void deleteByID(@PathVariable("id") String id) {
 		service.deleteById(id);
 	}
+	@DeleteMapping("/delete")
+	public void deleteEntity(@RequestBody Student stu) {
+		service.delete(stu);
+	}
 }
