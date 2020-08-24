@@ -31,7 +31,7 @@ public class StudentController {
 		return service.findAll();
 	}
 
-	@PostMapping("/add")
+	@PostMapping({"/"})
 	public void add(@RequestBody Student stu) {
 		service.save(stu);
 	}
