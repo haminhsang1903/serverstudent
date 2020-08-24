@@ -20,7 +20,7 @@ public class StudentController {
 	@Autowired
 	StudentService service;
 	
-	@GetMapping("/getAll")
+	@GetMapping({"/getAll","/"})
 	public List<Student> getAll(){
 //		Student stu = new Student("PC00378", "Ha Minh Sang", 20);
 //		service.save(stu);
