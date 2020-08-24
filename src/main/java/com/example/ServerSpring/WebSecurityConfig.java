@@ -9,7 +9,7 @@ public class WebSecurityConfig implements WebMvcConfigurer{
 	    public void addCorsMappings(CorsRegistry registry) {
 	        registry.addMapping("/**")
 	            .allowedOrigins("http://localhost:4200")
-	            .allowedMethods("POST")
+	            .allowedMethods("GET","POST","PUT","DELETE")
 	            .allowedHeaders("*")
 	            .allowCredentials(false)
 	            .maxAge(3600);
