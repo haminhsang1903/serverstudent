@@ -28,7 +28,7 @@ public class Clazz {
 		super();
 		this.id = id;
 		this.name = name;
-		//this.students = students;
+		//this.students = students; 
 	}
 
 	public Clazz() {
