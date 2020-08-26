@@ -10,35 +10,36 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import com.example.ServerSpring.entity.Student;
-import com.example.ServerSpring.repository.StudentRepository;
+import com.example.ServerSpring.entity.Clazz;
+import com.example.ServerSpring.repository.ClazzRespository;
 
 @Service
-public class StudentService implements StudentRepository{
+public class ClazzService implements ClazzRespository{
+	
 	@Autowired
-	StudentRepository repository;
-
-
+	ClazzRespository clazzrepo;
+	
+	
 	@Override
-	public List<Student> findAll() {
+	public List<Clazz> findAll() {
 		// TODO Auto-generated method stub
-		return repository.findAll();
+		return clazzrepo.findAll();
 	}
 
 	@Override
-	public List<Student> findAll(Sort sort) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Student> findAllById(Iterable<String> ids) {
+	public List<Clazz> findAll(Sort sort) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public <S extends Student> List<S> saveAll(Iterable<S> entities) {
+	public List<Clazz> findAllById(Iterable<String> ids) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public <S extends Clazz> List<S> saveAll(Iterable<S> entities) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -50,13 +51,13 @@ public class StudentService implements StudentRepository{
 	}
 
 	@Override
-	public <S extends Student> S saveAndFlush(S entity) {
+	public <S extends Clazz> S saveAndFlush(S entity) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void deleteInBatch(Iterable<Student> entities) {
+	public void deleteInBatch(Iterable<Clazz> entities) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -68,39 +69,39 @@ public class StudentService implements StudentRepository{
 	}
 
 	@Override
-	public Student getOne(String id) {
+	public Clazz getOne(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public <S extends Student> List<S> findAll(Example<S> example) {
+	public <S extends Clazz> List<S> findAll(Example<S> example) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public <S extends Student> List<S> findAll(Example<S> example, Sort sort) {
+	public <S extends Clazz> List<S> findAll(Example<S> example, Sort sort) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Page<Student> findAll(Pageable pageable) {
+	public Page<Clazz> findAll(Pageable pageable) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public <S extends Student> S save(S entity) {
+	public <S extends Clazz> S save(S entity) {
 		// TODO Auto-generated method stub
-		return repository.save(entity);
+		return clazzrepo.save(entity);
 	}
 
 	@Override
-	public Optional<Student> findById(String id) {
+	public Optional<Clazz> findById(String id) {
 		// TODO Auto-generated method stub
-		return repository.findById(id);
+		return clazzrepo.findById(id);
 	}
 
 	@Override
@@ -117,18 +118,18 @@ public class StudentService implements StudentRepository{
 
 	@Override
 	public void deleteById(String id) {
-		repository.deleteById(id);
+		clazzrepo.deleteById(id);
 		
 	}
 
 	@Override
-	public void delete(Student entity) {
-		repository.delete(entity);
+	public void delete(Clazz entity) {
+		clazzrepo.delete(entity);
 		
 	}
 
 	@Override
-	public void deleteAll(Iterable<? extends Student> entities) {
+	public void deleteAll(Iterable<? extends Clazz> entities) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -140,35 +141,27 @@ public class StudentService implements StudentRepository{
 	}
 
 	@Override
-	public <S extends Student> Optional<S> findOne(Example<S> example) {
+	public <S extends Clazz> Optional<S> findOne(Example<S> example) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public <S extends Student> Page<S> findAll(Example<S> example, Pageable pageable) {
+	public <S extends Clazz> Page<S> findAll(Example<S> example, Pageable pageable) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public <S extends Student> long count(Example<S> example) {
+	public <S extends Clazz> long count(Example<S> example) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public <S extends Student> boolean exists(Example<S> example) {
+	public <S extends Clazz> boolean exists(Example<S> example) {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
-	@Override
-	public List<Student> findByClazzId(String idClazz) {
-		return repository.findByClazzId(idClazz);
-	}
-
-
-	
 	
 }

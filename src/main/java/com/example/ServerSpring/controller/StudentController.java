@@ -14,45 +14,51 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.ServerSpring.entity.Clazz;
 import com.example.ServerSpring.entity.Student;
+import com.example.ServerSpring.service.ClazzService;
 import com.example.ServerSpring.service.StudentService;
 
-//@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*", allowCredentials = "false", maxAge = 15
-//		* 60, methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE })
+
 @RestController
 public class StudentController {
 	@Autowired
 	StudentService service;
 
-	@GetMapping({ "/getAll", "/" })
+	
+	@GetMapping({ "/getAllStudent", "/" })
 	public List<Student> getAll() {
-//		Student stu = new Student("PC00378", "Ha Minh Sang", 20);
-//		service.save(stu);
 		return service.findAll();
 	}
 
-	@PostMapping({"/"})
+	@PostMapping({"/student"})
 	public void add(@RequestBody Student stu) {
 		service.save(stu);
 	}
 
-	@GetMapping("/find{id}")
+	
+	
+	@GetMapping("/findStudent{id}")
 	public Student findById(@PathVariable("id") String id) {
 		return service.findById(id).get();
 	}
 
-	@PutMapping("/update")
+	@PutMapping("/student")
 	public void update(@RequestBody Student stu) {
 		service.save(stu);
 	}
 
-	@DeleteMapping("/delete{id}")
+	@DeleteMapping("/student{id}")
 	public void deleteByID(@PathVariable("id") String id) {
 		service.deleteById(id);
 	}
 
-	@DeleteMapping("/delete")
+	@DeleteMapping("/student")
 	public void deleteEntity(@RequestBody Student stu) {
 		service.delete(stu);
+	}
+	@GetMapping("/findStudentIdClazz/{id}")
+	public List<Student> findByClazzId(@PathVariable("id") String id) {
+		return service.findByClazzId(id);
 	}
 }
