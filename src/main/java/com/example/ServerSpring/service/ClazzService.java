@@ -163,5 +163,11 @@ public class ClazzService implements ClazzRespository{
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+	@Override
+	public Clazz findByName(String name) {
+		// TODO Auto-generated method stub
+		return clazzrepo.findByName(name);
+	}
 	
 }

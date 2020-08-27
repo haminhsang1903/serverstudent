@@ -51,4 +51,8 @@ public class ClazzController {
 	public void deleteEntity(@RequestBody Clazz cla) {
 		clazzRespository.delete(cla);
 	}
+	@GetMapping("findName/{name}")
+	public Clazz findByName(@PathVariable("name") String name) {
+		return clazzRespository.findByName(name);
+	}
 }
