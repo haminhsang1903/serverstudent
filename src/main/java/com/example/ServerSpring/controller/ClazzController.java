@@ -31,7 +31,6 @@ public class ClazzController {
 	}
 
 	
-	
 	@GetMapping("/findClazz{id}")
 	public Clazz findById(@PathVariable("id") String id) {
 		return clazzRespository.findById(id).get();
@@ -55,4 +54,5 @@ public class ClazzController {
 	public Clazz findByName(@PathVariable("name") String name) {
 		return clazzRespository.findByName(name);
 	}
+	
 }

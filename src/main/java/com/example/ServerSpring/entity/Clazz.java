@@ -2,6 +2,7 @@ package com.example.ServerSpring.entity;
 
 import java.util.Collection;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -10,7 +11,7 @@ import javax.persistence.OneToMany;
 public class Clazz {
 	@Id
 	private String id;
-	
+	@Column(name = "name", columnDefinition = "NVARCHAR(50)")
 	private String name;
 	
 
