@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
@@ -11,9 +12,12 @@ import javax.persistence.OneToMany;
 public class Clazz {
 	@Id
 	private String id;
+	
 	@Column(name = "name", columnDefinition = "NVARCHAR(50)")
 	private String name;
 	
+	@OneToMany(mappedBy = "id_class", fetch = FetchType.EAGER)
+	private Collection<Student> students;
 
 //	public Collection<Student> getStudents() {
 //		return students;

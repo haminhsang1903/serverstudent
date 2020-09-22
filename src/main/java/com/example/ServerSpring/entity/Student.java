@@ -17,6 +17,7 @@ public class Student implements Serializable{
 	private int age;
 	
 	@ManyToOne
+	@JoinColumn(name = "id_class")
 	private Clazz clazz;
 	
 	
